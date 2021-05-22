@@ -33,7 +33,17 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }} 
 
+    - name: Deploy to heroku        
+      uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+      with:
+        heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+        heroku_app_name: "mask-detect-live"
+        heroku_email: "suchithkumar.ch@gmail.com"
+        usedocker: true
 
+
+    - name: Heroku login status
+      run:  heroku auth:whoami
 
                 
   
