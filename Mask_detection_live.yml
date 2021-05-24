@@ -1,8 +1,0 @@
----
-- name: Deploy docker img
-  hosts: all
-  tasks:
-    - name: Pull mask_detector image
-      docker_image:
-        name: pavanperuru/miniproject
-        source: pull
